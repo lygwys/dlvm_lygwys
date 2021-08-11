@@ -1,0 +1,4 @@
+*.js linguist-language=.net core
+*.css linguist-language=.net core
+*.html linguist-language=.net core
+libgrpc_csharp_ext.x64.so filter=lfs diff=lfs merge=lfs -text
