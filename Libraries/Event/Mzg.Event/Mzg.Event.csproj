@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Logging\Mzg.Logging.AppLog\Mzg.Logging.AppLog.csproj" />
+    <ProjectReference Include="..\Mzg.Event.Abstractions\Mzg.Event.Abstractions.csproj" />
+    <ProjectReference Include="..\Mzg.Event.Data\Mzg.Event.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mzg.Core">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Infrastructure">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

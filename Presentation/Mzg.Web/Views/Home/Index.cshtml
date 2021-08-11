@@ -1,0 +1,254 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="xms">
+    <meta name="author" content="xms">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>@app.PlatformSettings.AppName</title>
+    <link href="/content/css/bootstrap3.3.5/bootstrap.min.css?v=1.0.0?v=@app.PlatformSettings.VersionNumber" rel="stylesheet">
+    <link href="/content/css/main.css?v=@app.PlatformSettings.VersionNumber" rel="stylesheet" />
+    <link href="/content/js/jquery-toast/jquery.toast.min.css?v=@app.PlatformSettings.VersionNumber" rel="stylesheet">
+    <link href="~/content/customize/layui/css/layui.css?v=@app.PlatformSettings.VersionNumber" rel="stylesheet" />
+    <link id="themeLink" href="~/content/css/theme/@(app.Theme).css?v=@app.PlatformSettings.VersionNumber" rel="stylesheet" />
+    @{await Html.RenderPartialAsync("CommonLabel"); }
+</head>
+<body class="xms-custom sideBar-open themes-dark xms-index-ui" style="overflow:hidden;">
+
+    <div class="xms-header">
+        <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+            <div class="navbar-header col-sm-1" style="width:170px;">
+
+                <div class="navbar-text">
+                    <a class="link-white font-bold" title="@app.PlatformSettings.AppName" href="/@(app.OrganizationUniqueName)">@app.PlatformSettings.AppName</a>
+                    <i class="glyphicon glyphicon-cloud"></i>
+                </div>
+            </div>
+            <div class="col-sm-4 nav-title text-center">
+                <ul class="layui-nav layui-layout-left">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" id="xms-sideBarbtn" title="侧边伸缩">
+                            <i class="layui-icon layui-icon-shrink-right left-menus-ctrl pull-left"></i>
+                        </a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <div id="nav-search-dropdown" class="dropdown">
+                            <input type="text" placeholder="@app.T["caidanss"]..." autocomplete="off" class="layui-input layui-input-search" id="nav-search-input" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <ul id="nav-search-tips" class="dropdown-menu" aria-labelledby="nav-search-input">
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <div class="nav navbar-nav navbar-right hidden-xs" style="margin-right:5px;">
+                <span></span>
+                <ul class="nav-right-toolbar pull-right">
+                    @*<li><span id="view-fullscreen" class="glyphicon glyphicon-resize-full"></span></li>*@
+                    <li style="position:relative;">
+                        <a href="javascript:;" id="noticeCenterBtn" title="@app.T["xiaoxizx"]">
+                            <i class="glyphicon glyphicon-bell">&nbsp;</i>
+                            <div class="tooltip right" role="tooltip" id="noticeCount" style="display:none;">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="popover fade bottom " role="tooltip" id="popoverNoticeBox"><div class="arrow" style="left: 15.7%; position: absolute;"></div><div class="popover-content"></div></div>
+                    </li>
+                    <li style="position:relative;">
+                        <a href="javascript:;" class="main-homepage" title="@app.T["shouye"]"><i class="layui-icon layui-icon-home"></i> @app.T["shouye"]</a>
+                        <div class="hide" id="main-homepage-content">
+                            <ul class="layadmin-setHomePage-color">
+                                <li data-index="0" data-alias="black" title="深邃"> <div class="setTheme-header" style="background-color: #393D49;"></div> <div class="setTheme-side" style="background-color: #20222A;"> <div class="setTheme-logo" style="background-color: #20222A;"></div> </div> </li>
+                                <li data-index="1" data-alias="light" title="明亮"> <div class="setTheme-header" style="background-color: #1E9FFF;"></div> <div class="setTheme-side" style="background-color: #00A7F5;"> <div class="setTheme-logo" style="background-color: #0085E8;"></div> </div> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="position:relative;">
+                        <a href="javascript:;" class="main-theme" title="@app.T["zhuti"]"><i class="layui-icon layui-icon-theme"></i> @app.T["zhuti"]</a>
+                        <div class="hide" id="main-theme-content">
+                            <ul class="layadmin-setTheme-color">
+                                <li data-index="0" data-alias="default" title="default"><div class="setTheme-header" style="background-color: undefined;"></div><div class="setTheme-side" style="background-color: #20222A;"><div class="setTheme-logo" style="background-color: undefined;"></div></div></li>
+                                <li data-index="1" data-alias="dark-blue" title="dark-blue"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #03152A;"> <div class="setTheme-logo" style="background-color: undefined;"></div> </div> </li>
+                                <li data-index="2" data-alias="coffee" title="coffee"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #2E241B;"> <div class="setTheme-logo" style="background-color: undefined;"></div> </div> </li>
+                                <li data-index="3" data-alias="purple-red" title="purple-red"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #50314F;"> <div class="setTheme-logo" style="background-color: undefined;"></div> </div> </li>
+                                <li data-index="4" data-alias="ocean" title="ocean"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #344058;"> <div class="setTheme-logo" style="background-color: #1E9FFF;"></div> </div> </li>
+                                <li data-index="5" data-alias="green" title="green"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #3A3D49;"> <div class="setTheme-logo" style="background-color: #2F9688;"></div> </div> </li>
+                                <li data-index="6" data-alias="red" title="red"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #20222A;"> <div class="setTheme-logo" style="background-color: #F78400;"></div> </div> </li>
+                                <li data-index="7" data-alias="fashion-red" title="fashion-red"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #28333E;"> <div class="setTheme-logo" style="background-color: #AA3130;"></div> </div> </li>
+                                <li data-index="8" data-alias="classic-black" title="classic-black"> <div class="setTheme-header" style="background-color: undefined;"></div> <div class="setTheme-side" style="background-color: #24262F;"> <div class="setTheme-logo" style="background-color: #3A3D49;"></div> </div> </li>
+                                <li data-index="9" data-alias="green-header" title="green-header"> <div class="setTheme-header" style="background-color: #2F9688;"></div> <div class="setTheme-side" style="background-color: #20222A;"> <div class="setTheme-logo" style="background-color: #226A62;"></div> </div> </li>
+                                <li data-index="10" data-alias="ocean-header" title="ocean-header"> <div class="setTheme-header" style="background-color: #1E9FFF;"></div> <div class="setTheme-side" style="background-color: #344058;"> <div class="setTheme-logo" style="background-color: #0085E8;"></div> </div> </li>
+                                <li data-index="11" data-alias="classic-black-header" title="classic-black-header"> <div class="setTheme-header" style="background-color: #393D49;"></div> <div class="setTheme-side" style="background-color: #20222A;"> <div class="setTheme-logo" style="background-color: #20222A;"></div> </div> </li>
+                                <li data-index="12" data-alias="purple-red-header" title="purple-red-header"> <div class="setTheme-header" style="background-color: #50314F;"></div> <div class="setTheme-side" style="background-color: #50314F;"> <div class="setTheme-logo" style="background-color: #50314F;"></div> </div> </li>
+                                <li data-index="13" data-alias="fashion-red-header" title="fashion-red-header"> <div class="setTheme-header" style="background-color: #AA3130;"></div> <div class="setTheme-side" style="background-color: #28333E;"> <div class="setTheme-logo" style="background-color: #28333E;"></div> </div> </li>
+                                <li data-index="14" data-alias="green-header-title" title="green-header-title"> <div class="setTheme-header" style="background-color: #009688;"></div> <div class="setTheme-side" style="background-color: #28333E;"> <div class="setTheme-logo" style="background-color: #009688;"></div> </div> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown main-user-tag" style="position:relative;">
+                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="@app.T["bianqian"]"><span class="glyphicon glyphicon-tag"></span> @app.T["bianqian"]</a>
+                        <div class="dropdown-menu">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    @app.T["bianqian"]
+                                    <button type="button" class="close"><span aria-hidden="true"><i class="layui-icon">ဆ</i></span></button>
+                                </div>
+                                <div class="panel-body">
+                                    <textarea id="main-user-tag-data"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="position:relative;">
+                        <a href="javascript:;" class="main-full-screen" title=" @app.T["quanping"]"><i class="layui-icon layui-icon-screen-full"></i> @app.T["quanping"]</a>
+                    </li>
+
+                    <li class="dropdown main-user-setting">
+                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i> @app.CurrentUser.UserName<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+
+                            <li><a data-href="@("/"+app.OrganizationUniqueName)/user/usersettings" onclick="takeToBottom(this)" data-id="page-setting" data-name="@app.T["usersettings"]" target="pageViewName" title="@app.T["usersettings"]"><span class="glyphicon glyphicon-cog"></span> @app.T["usersettings"]</a></li>
+                            @if (app.CurrentUser.IsSuperAdmin)
+                            {
+                <li><a href="@("/"+app.OrganizationUniqueName)/customize/index" target="_parent"><span class="glyphicon glyphicon-asterisk"></span> @app.T["kaifapt"]</a></li>}
+                            <li><a data-href="@("/"+app.OrganizationUniqueName)/user/ResetMyPassword" target="pageViewName" data-name="@app.T["password"]" onclick="takeToBottom(this)" data-id="page-resetPassword" title="@app.T["password"]"><span class="glyphicon glyphicon-lock"></span> @app.T["password"]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@("/"+app.OrganizationUniqueName)/account/signout" title="@app.T["signout"]"><span class="glyphicon glyphicon-log-out"></span> @app.T["signout"]</a></li>
+                        </ul>
+                    </li>
+                    <li style="position:relative;" id="main-about">
+                        <input type="hidden" name="bbxxid" id="bbxxid" value="@app.T["banbenxx"]" />
+                        <a href="javascript:;" title="@app.T["banbenxx"]"><i class="layui-icon layui-icon-more-vertical"></i></a>
+                        <div class="hide" id="main-about-content">
+                            <p>@app.T["yingyongmc"]：@app.PlatformSettings.AppName</p>
+                            <p>@app.T["zhuzhimc"]：@app.OrganizationName</p>
+                            <p>@app.T["jiagoubb"]：@app.PlatformSettings.VersionNumber</p>
+                            <p>@app.T["yingyonnjj"]</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-default sidebar view_left" role="navigation">
+                <div class="sidebar-nav navbar-collapse collapse" id="sidebarMenuWrap">
+                    <div class="hide">
+                        <button type="button" class="custom-toggle hidden-sm hidden-xs">
+                            <span class="sr-only"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!--  toggle-tree 添加该样式可以使用点击下拉方式显示 -->
+                    <ul class="nav in toggle-tree" id="side-menu"></ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+        </nav>
+    </div>
+    <div class="xms-sub-nav clearfix">
+        <div class="dropdown  pull-right" id="xms-sb-ctrlClose">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu-ctrlClose" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu-ctrlClose">
+                <li><a href="javascript:;" data-type="0">@app.T["guanbidqyq"]</a></li>
+                <li><a href="javascript:;" data-type="1">@app.T["guanbizcyq"]</a></li>
+                <li><a href="javascript:;" data-type="2">@app.T["guanbiycyq"]</a></li>
+                <li><a href="javascript:;" data-type="3">@app.T["guanbiqtyq"]</a></li>
+                <li><a href="javascript:;" data-type="4">@app.T["guanbiqbyq"]</a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-default pull-right xms-sb-ctrlRight"><span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button type="button" class="btn btn-default pull-left xms-sb-ctrlLeft"><span class="glyphicon glyphicon-chevron-left"></span></button>
+        <a id="xms-subn-home" target="pageViewName" data-iframe="pageView" data-iframeid="pageView" data-name="@app.T["shouye"]" onclick="showIframe(this)" class="btn btn-default pull-left xms-subn-items-bgcol" href="javascript:void(0)"><span class="glyphicon glyphicon glyphicon-home"></span></a>
+        @*lyb添加功能（页签上有左侧页签，右侧页签等）*@
+    <div class="dropdown  pull-left" id="xms-lyb-ctrlCloseB">
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-ctrlClose">
+            <li><a href="javascript:;" data-type="0">@app.T["guanbidqyq"]</a></li>
+            <li><a href="javascript:;" data-type="1">@app.T["guanbizcyq"]</a></li>
+            <li><a href="javascript:;" data-type="2">@app.T["guanbiycyq"]</a></li>
+            <li><a href="javascript:;" data-type="3">@app.T["guanbiqtyq"]</a></li>
+            <li><a href="javascript:;" data-type="4">@app.T["guanbiqbyq"]</a></li>
+        </ul>
+    </div>
+        <div class="btn-group pull-left xms-subn-items">
+        </div>
+    </div>
+    <div class="page-wrap">
+        <div class="page-content" id="page-content" style="">
+            <iframe src="@((app.CurrentUser.UserSettings.HomePageArea.IsNotEmpty() ? (app.CurrentUser.UserSettings.HomePageArea.IndexOf("/" + app.OrganizationUniqueName) >= 0 ? app.CurrentUser.UserSettings.HomePageArea : "/"+ app.OrganizationUniqueName + app.CurrentUser.UserSettings.HomePageArea) : "/"+ app.OrganizationUniqueName + "/component/renderdashboard"))" id="pageView" name="pageViewName" class="ifrmae-list" width="100%" frameborder="0" onload="Javascript: iframeReady(this)" scrolling="auto"></iframe>
+        </div>
+    </div>
+
+    <div class="xms-tooltip" id="tooltipShow" style="display: none;">
+
+        <div class="xms-tooltip-arrow"><span class="glyphicon glyphicon-play"></span></div>
+        <div class="xms-tooltip-content">
+            <div class="xms-tooltip-close">x</div>
+            <div class="xms-tooltip-info">
+            </div>
+        </div>
+    </div>
+    @{await Html.RenderPartialAsync("UserContext"); }
+    <script src="~/content/js/requirejs/require.js"></script>
+    <script src="~/content/js/requirejs/config.js"></script>
+    <script src="~/content/customize/layui/layui.js"></script>
+    <script>
+        //加载相关js在有需要时自动加载
+        require(['jquery', 'notice', 'home.index', 'bootstrap', 'jqueryBootstrap'
+            , 'mousewheel'
+            , 'jquery.ui'
+            , 'jquery.ui.widget'
+            , 'jquery.ui.mouse'
+            , 'jquery.ui.draggable'
+            , 'mzg.jquery'
+            , 'mzg.web'
+            , 'fetch'
+            , 'mzgmain.plugs'
+            , 'mzg-history'
+            , 'jquery.toast'
+            , 'jquery.tmpl'
+            , 'jquery.cookie'
+        ], function ($, notice, indexPage) {
+
+            $(function () {
+                if (top.location != location) {
+                    top.location.href = location.href;
+                }
+
+                //页面初始化
+                indexPage.init();
+
+                //消息通知
+                notice.init();
+                notice.bindEvent();
+
+            });
+
+        });
+
+        function iframeReady(obj) {
+            var timer = setInterval(function () {
+                if (typeof SetWinHeight === "undefined") {
+                    return false;
+                }
+                SetWinHeight(this);
+                clearInterval(timer);
+            }, 50);
+        }
+    </script>
+</body>
+</html>

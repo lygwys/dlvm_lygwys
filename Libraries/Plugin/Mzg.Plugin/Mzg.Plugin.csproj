@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataCore\Mzg.Data\Mzg.Data.csproj" />
+    <ProjectReference Include="..\..\Dependency\Mzg.Dependency.Abstractions\Mzg.Dependency.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Dependency\Mzg.Dependency\Mzg.Dependency.csproj" />
+    <ProjectReference Include="..\..\File\Mzg.File.Extensions\Mzg.File.Extensions.csproj" />
+    <ProjectReference Include="..\..\Module\Mzg.Module.Abstractions\Mzg.Module.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Module\Mzg.Module.Core\Mzg.Module.Core.csproj" />
+    <ProjectReference Include="..\..\Mzg.Context\Mzg.Context.csproj" />
+    <ProjectReference Include="..\Mzg.Plugin.Abstractions\Mzg.Plugin.Abstractions.csproj" />
+    <ProjectReference Include="..\Mzg.Plugin.Domain\Mzg.Plugin.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mzg.Caching">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Configuration">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Configuration.Domain">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Configuration.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Core">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Infrastructure">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Schema.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Schema.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Schema.Domain">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Schema.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Solution">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Solution.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Solution.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Solution.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

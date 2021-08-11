@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataCore\Mzg.Data\Mzg.Data.csproj" />
+    <ProjectReference Include="..\..\Dependency\Mzg.Dependency.Abstractions\Mzg.Dependency.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Dependency\Mzg.Dependency\Mzg.Dependency.csproj" />
+    <ProjectReference Include="..\..\Event\Mzg.Event.Abstractions\Mzg.Event.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Module\Mzg.Module.Abstractions\Mzg.Module.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Module\Mzg.Module.Core\Mzg.Module.Core.csproj" />
+    <ProjectReference Include="..\Mzg.RibbonButton.Abstractions\Mzg.RibbonButton.Abstractions.csproj" />
+    <ProjectReference Include="..\Mzg.RibbonButton.Domain\Mzg.RibbonButton.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mzg.Authrization.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Authrization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Core">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Form.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Form.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Infrastructure">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Localization">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Localization.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Schema.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Schema.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Schema.Domain">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Schema.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Sdk.Extensions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Sdk.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Solution.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Solution.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.WebResource">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.WebResource.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.WebResource.Abstractions">
+      <HintPath>..\..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.WebResource.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

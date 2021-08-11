@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Organization\Mzg.Organization.Domain\Mzg.Organization.Domain.csproj" />
+    <ProjectReference Include="..\Organization\Mzg.Organization\Mzg.Organization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mzg.AppSetting">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.AppSetting.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Core">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Infrastructure">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Localization.Abstractions">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Security.Domain">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Security.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Session">
+      <HintPath>..\..\Presentation\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Session.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

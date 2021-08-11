@@ -1,0 +1,39 @@
+﻿@using Mzg.Web.Reports;
+@using DevExpress.AspNetCore;
+
+<!-- XtraReport ================================================= start -->
+<link rel="stylesheet" href="/css/thirdparty.bundle.css" />
+<link rel="stylesheet" href="/css/site.css" />
+<script src="/js/thirdparty.bundle.js"></script>
+<script src="/js/site.js" asp-append-version="true"></script>
+<!-- XtraReport ================================================= end -->
+<link rel="stylesheet" href="/css/viewer.part.bundle.css" />
+<link rel="stylesheet" href="/css/designer.part.bundle.css" />
+
+<script src="/js/viewer.part.bundle.js"></script>
+<script src="/js/designer.part.bundle.js"></script>
+@{ XtraReport1 report1 = new XtraReport1();
+
+    //Parameter parameter = new Parameter()
+    //{
+    //    Name = "Parameter1",
+    //    Type = typeof(System.Int16),
+    //    Value = 100,
+    //    Visible = false
+
+    //};
+    // report1.Parameters["parameter1"].Visible = false;
+    //   report1.Parameters["parameter1"].Value = 20;
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DesigReport</title>
+</head>
+<body>
+    @Html.DevExpress().ReportDesigner("reportDesigner").Height("1000px").Bind(report1);
+</body>
+</html>

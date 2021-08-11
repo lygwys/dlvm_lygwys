@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.1.3.0" Ref="1" ControlType="Mzg.Web.Reports.XtraReport1, Mzg.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Name="XtraReport1" DisplayName="借款单" PageWidth="850" PageHeight="1100" Version="20.1" DataMember="GC_jiekuansqd" DataSource="#Ref-0">
+  <Extensions>
+    <Item1 Ref="2" Key="DataSerializationExtension" Value="DevExpress.XtraReports.Web.ReportDesigner.DefaultDataSerializer" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="4" Description="Parameter1" ValueInfo="90" Name="parameter1" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="5" ControlType="TopMarginBand" Name="topMarginBand1">
+      <Controls>
+        <Item1 Ref="6" ControlType="XRLabel" Name="label1" Multiline="true" Text="label1" SizeF="100,23" LocationFloat="176.04167,67.00001" Padding="2,2,0,0,100" />
+      </Controls>
+    </Item1>
+    <Item2 Ref="7" ControlType="DetailBand" Name="detailBand1">
+      <Controls>
+        <Item1 Ref="8" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" SizeF="100,23" LocationFloat="148.96,0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="9" EventName="BeforePrint" PropertyName="Text" Expression="[BenCijkze]" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="10" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" SizeF="100,23" LocationFloat="0,0" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="11" EventName="BeforePrint" PropertyName="Text" Expression="[jiekuanrq]" />
+          </ExpressionBindings>
+        </Item2>
+      </Controls>
+    </Item2>
+    <Item3 Ref="12" ControlType="BottomMarginBand" Name="bottomMarginBand1" />
+  </Bands>
+  <ObjectStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v20.1" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9IkNvbm5lY3Rpb25TdHJpbmciIEZyb21BcHBDb25maWc9InRydWUiIC8+PFF1ZXJ5IFR5cGU9IlNlbGVjdFF1ZXJ5IiBOYW1lPSJHQ19qaWVrdWFuc3FkIj48UGFyYW1ldGVyIE5hbWU9InBhcmFtZXRlcjEiIFR5cGU9IkRldkV4cHJlc3MuRGF0YUFjY2Vzcy5FeHByZXNzaW9uIj4oU3lzdGVtLkludDE2KSg/cGFyYW1ldGVyMSk8L1BhcmFtZXRlcj48VGFibGVzPjxUYWJsZSBOYW1lPSJHQ19qaWVrdWFuc3FkIiAvPjwvVGFibGVzPjxDb2x1bW5zPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IkdDX2ppZWt1YW5zcWRJZCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJOYW1lIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IlZlcnNpb25OdW1iZXIiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iQ3JlYXRlZE9uIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IkNyZWF0ZWRCeSIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJNb2RpZmllZE9uIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9Ik1vZGlmaWVkQnkiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iU3RhdGVDb2RlIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IlN0YXR1c0NvZGUiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iT3duZXJJZCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJPd25lcklkVHlwZSIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJPd25pbmdCdXNpbmVzc1VuaXQiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iT3JnYW5pemF0aW9uSWQiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iV29ya0Zsb3dJZCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJQcm9jZXNzU3RhdGUiIC8+PENvbHVtbiBUYWJsZT0iR0Nfamlla3VhbnNxZCIgTmFtZT0iU3VvU2h1c3liIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IkppZUt1YW5zcWRiaCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJpbXBvcnQyIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IkdvbmdZaW5nc2toeCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJHb25nWWluZ3N6aCIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJRaW5nS3Vhbnl0IiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9ImZ1a3VhbmZzIiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9IkJlbkNpamt6ZSIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJzZmd6IiAvPjxDb2x1bW4gVGFibGU9IkdDX2ppZWt1YW5zcWQiIE5hbWU9ImppZWt1YW5ycSIgLz48Q29sdW1uIFRhYmxlPSJHQ19qaWVrdWFuc3FkIiBOYW1lPSJpbXBvcnQxIiAvPjwvQ29sdW1ucz48RmlsdGVyPltHQ19qaWVrdWFuc3FkLkJlbkNpamt6ZV0gJmd0Oz0gP3BhcmFtZXRlcjE8L0ZpbHRlcj48L1F1ZXJ5PjxSZXN1bHRTY2hlbWE+PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkdDX2ppZWt1YW5zcWQiPjxGaWVsZCBOYW1lPSJHQ19qaWVrdWFuc3FkSWQiIFR5cGU9Ikd1aWQiIC8+PEZpZWxkIE5hbWU9Ik5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmVyc2lvbk51bWJlciIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZE9uIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZEJ5IiBUeXBlPSJHdWlkIiAvPjxGaWVsZCBOYW1lPSJNb2RpZmllZE9uIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iTW9kaWZpZWRCeSIgVHlwZT0iR3VpZCIgLz48RmllbGQgTmFtZT0iU3RhdGVDb2RlIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU3RhdHVzQ29kZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik93bmVySWQiIFR5cGU9Ikd1aWQiIC8+PEZpZWxkIE5hbWU9Ik93bmVySWRUeXBlIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iT3duaW5nQnVzaW5lc3NVbml0IiBUeXBlPSJHdWlkIiAvPjxGaWVsZCBOYW1lPSJPcmdhbml6YXRpb25JZCIgVHlwZT0iR3VpZCIgLz48RmllbGQgTmFtZT0iV29ya0Zsb3dJZCIgVHlwZT0iR3VpZCIgLz48RmllbGQgTmFtZT0iUHJvY2Vzc1N0YXRlIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU3VvU2h1c3liIiBUeXBlPSJHdWlkIiAvPjxGaWVsZCBOYW1lPSJKaWVLdWFuc3FkYmgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iaW1wb3J0MiIgVHlwZT0iR3VpZCIgLz48RmllbGQgTmFtZT0iR29uZ1lpbmdza2h4IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdvbmdZaW5nc3poIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlFpbmdLdWFueXQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iZnVrdWFuZnMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJCZW5DaWpremUiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InNmZ3oiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9ImppZWt1YW5ycSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9ImltcG9ydDEiIFR5cGU9Ikd1aWQiIC8+PC9WaWV3PjwvRGF0YVNldD48L1Jlc3VsdFNjaGVtYT48Q29ubmVjdGlvbk9wdGlvbnMgQ2xvc2VDb25uZWN0aW9uPSJ0cnVlIiAvPjwvU3FsRGF0YVNvdXJjZT4=" />
+  </ObjectStorage>
+</XtraReportsLayoutSerializer>

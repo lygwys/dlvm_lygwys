@@ -1,0 +1,288 @@
+﻿@using Mzg.Organization.Domain;
+
+@model Mzg.Web.Models.SignInModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="icon" href="/favicon.ico">
+    <title></title>
+
+    <link href="/content/css/bootstrap3.3.5/bootstrap.min.css" rel="stylesheet">
+    <link href="/content/js/jquery-toast/jquery.toast.min.css" rel="stylesheet">
+    <link href="/content/customize/layui/css/layui.css" rel="stylesheet" />
+    <link href="/content/css/loaders.css" rel="stylesheet" />
+    <link href="/content/css/signin.css" rel="stylesheet" />
+    <link href="/content/css/signin2.css" rel="stylesheet" />
+</head>
+<body style="margin:0px;">
+    <div id="v-loading-container" style="display: none;"><div class="loading-wrapper"><span class="loading-dot loading-spin"><i></i> <i></i> <i></i> <i></i></span></div></div>
+    <div id="app">
+        <div class="bg">
+            <div class="content">
+                <!-- <div class="desc">
+                  <div class="title">vol.vue</div>
+                  <p>前后端分离</p>
+                  <p>全自动代码生成</p>
+                  <p>支持前端、后台扩展的快速开发框架</p>
+                  <p>后台.NetCore 3.1、EntityFrameWorkCore 3.1、Dapper</p>
+                  <p>前端Vue、Promise、Vuex、Axios、Iview、Element-UI</p>
+                  <p>帐号admin666,密码123456(本地帐号admin,密码123456)</p>
+                </div> -->
+                <div class="l-left">
+                    <div class="desc">
+                        <div class="title">Dlvm</div>
+                        <p>前台</p>
+                        <p>.NetCore、EntityFrame Core、Devpress、NuGet</p>
+                        <p>Jquery、Bootstrap、Layui、JavaScrpit</p>
+                        <p>演示帐号：demo &nbsp; &nbsp; &nbsp;密码:dlvmdm</p>
+                        <p>本地帐号：admin &nbsp; &nbsp; &nbsp; 密码:dlvmdm</p>
+                        <div style="margin-top: 30px">
+                            <a href="https://github.com/mzgdqq/dlvm"
+                               target="_blank"
+                               style="color: #ffff; border: 1px solid #ffff;width: 80px;margin-right: 5px;"
+                               class="index-btn ivu-btn ivu-btn-primary ivu-btn-circle ivu-btn-ghost">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://gitee.com/xiaomagenb/dlvm"
+                               target="_blank"
+                               style="color: #ffff; border: 1px solid #ffff; width: 80px;margin-right: 5px;"
+                               class="index-btn ivu-btn ivu-btn-primary ivu-btn-circle ivu-btn-ghost">
+                                <span>Gitee</span>
+                            </a>
+                            <a href="https://edu.csdn.net/course/detail/32671"
+                               target="_blank"
+                               style="color: #ffff; border: 1px solid #ffff; width: 80px;margin-right: 5px;"
+                               class="index-btn ivu-btn ivu-btn-primary ivu-btn-circle ivu-btn-ghost">
+                                <span>Video</span>
+                            </a>
+                            <a href="http://www.dlvm.vip/index.php?act=zaixianwd"
+                               target="_blank"
+                               style="color: #ffff; border: 1px solid #ffff"
+                               class="index-btn ivu-btn ivu-btn-primary ivu-btn-circle ivu-btn-ghost">
+                                <span>Manual </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="login">
+                    <div class="login-contianer">
+                        <form id="signinForm" action="/mzg/api/account" method="post" data-jsonajax="true">
+                            @Html.HiddenFor(x => x.ReturnUrl)
+                            <div class="login-form">
+                                <h2 style="padding: 20px 0px;font-weight: 500;">帐号登陆</h2>
+                                <div class="form-user">
+                                    <input type="hidden" value="mzg" name="OrgUniqueName" />
+                                    <div class="item">
+                                        <div class="f-text">
+                                            <label>
+                                                <!-- <Icon type="ios-people" size="20" /> -->
+                                                用户名：
+                                            </label>
+                                        </div>
+                                        <div class="f-input">
+                                            <input type="text" name="loginname" id="LoginName" autocomplete="off" class="form-text loginname" placeholder="输入用户" required value="@Model.LoginName" autofocus />
+                                        </div>
+                                        <div class="f-remove">
+                                            <!-- <Icon type="ios-close-circle" /> -->
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="f-text">
+                                            <label>
+                                                <!-- <Icon type="ios-lock"
+                :size="20" /> -->
+                                                密&nbsp;&nbsp;&nbsp;码：
+                                            </label>
+                                        </div>
+                                        <div class="f-input">
+                                            <input type="password" name="password" id="password" autocomplete="off" class="form-text loginpwd" placeholder="密码" required value="@Model.Password" />
+                                        </div>
+                                        <div v-focus class="f-remove">
+                                            <Icon type="ios-close-circle" />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="f-text">
+                                            <label>
+                                                <!-- <Icon type="md-images"
+                v-focus
+                :size="20" /> -->
+                                                验证码：
+                                            </label>
+                                        </div>
+                                        <div class="f-input">
+                                            <input type="text" name="verifycode" id="verifycode" class="form-text" autocomplete="off" placeholder="验证码" required value="@Model.VerifyCode" />
+                                        </div>
+                                        <img id="verifyImage" style="cursor:pointer;" title="点击刷新验证码" onclick="this.src='/mzg/tool/verifyimage?time=' + new Date()" src="/mzg/tool/verifyimage" height="30" class="left" />
+                                    </div>
+
+                                </div>
+
+                                <div>
+                                    <label class="rem">
+                                        @Html.CheckBoxFor(x => x.RememberMe)&nbsp;&nbsp;记住我
+                                    </label>
+                                </div>
+
+
+                                <div style="loging-btn">
+                                    <button type="submit" class="ivu-btn ivu-btn-info ivu-btn-long ivu-btn-large"> <span><span>登陆</span></span></button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-bg"></div>
+            <div class="r-bg"></div>
+            <div class="c-bg">
+                <div class="c-bg-item"></div>
+                <div class="c-bg-item"></div>
+                <div class="c-bg-item"></div>
+                <div class="c-bg-item"></div>
+            </div>
+            <div class="login-footer">
+                <a>
+                    <!-- <Icon type="logo-github" /> -->
+                    版本：2020
+                </a>
+                <a>密码找回</a>
+            </div>
+        </div>
+    </div>
+    <!--div class="clearCacheBtn" id="clearCacheBtn">清除缓存</!--div-->
+
+    <script src="/content/js/jquery.min.js"></script>
+    <script src="/content/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/content/js/jquery.form.js"></script>
+    <script src="/content/js/jquery-toast/jquery.toast.min.js"></script>
+    <script src="/content/js/mzg.web.js"></script>
+    <script src="/content/js/mzg.jquery.js"></script>
+    <script src="~/content/js/jquery.cookie.js"></script>
+    <script src="~/content/js/jquery-ui-1.10.3/ui/jquery.ui.effect.js"></script>
+
+
+    <script>
+        var ORG_SERVERURL = '/mzg';
+        window.onload = function () {
+            if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE6.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE8.0") {
+                alert("为了您的更好体验，请使用IE9及以上版本浏览网页");
+            }
+
+        }
+        function clearAllCookie() {
+            var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (var i = keys.length; i--;)
+                    document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+            }
+            localStorage.clear();
+        }
+        $(function () {
+            if (top.location != location) {
+                top.location.href = location.href;
+            }
+            var returnUrl = $('#ReturnUrl').val();
+            var actionPre = '/api/account';
+            var $OrgUniqueName = $('#OrgUniqueName');
+            $OrgUniqueName.on('change', function (e) {
+                var val = $(this).val();
+                ORG_SERVERURL = '/' + val;
+                var action = '/' + val + actionPre;
+                $('form').attr('action', action);
+            }).trigger('change');
+
+            var debound = $.deboundsEvent(3000, true);
+            $('form').submit(function () {
+                var that = this;
+                debound(function () {
+                    $('.login-wrap').addClass('test'); //倾斜特效
+                    setTimeout(function () {
+                        $('.login-wrap').addClass('testtwo'); //平移特效
+                    }, 300);
+                    setTimeout(function () {
+                        $('.authent').show().animate({ right: -320 }, {
+                            easing: 'easeOutQuint',
+                            duration: 600,
+                            queue: false
+                        });
+                        $('.authent').animate({ opacity: 1 }, {
+                            duration: 200,
+                            queue: false
+                        }).addClass('visible');
+                    }, 500);
+
+                    $(that).ajaxSubmit(function (response) {
+
+                        setTimeout(function () {
+                            $('.authent').show().animate({ right: 90 }, {
+                                easing: 'easeOutQuint',
+                                duration: 600,
+                                queue: false
+                            });
+                            if (!response.IsSuccess)
+                                Dlv.web.Toast(response.Content, false);
+                            $('.authent').animate({ opacity: 0 }, {
+                                duration: 200,
+                                queue: false
+                            }).addClass('visible');
+                            $('.login-wrap').removeClass('testtwo'); //平移特效
+                        }, 2000);
+                        setTimeout(function () {
+                            $('.authent').hide();
+                            $('.login-wrap').removeClass('test');
+                            if (response.IsSuccess == true) {
+                                $('.login-success').show();
+                                $('.login-success').nextAll().hide();
+
+                                $('.login-user-name').text($('#LoginName').val());
+                                setTimeout(function () {
+                                    if (returnUrl) {
+                                        location.href = returnUrl;
+                                    } else {
+                                        location.href = ORG_SERVERURL;
+                                    }
+                                }, 1000);
+
+                            } else {
+                                $('#verifyImage').trigger('click');
+                            }
+                        }, 2400);
+
+                    });
+                })
+                //console.log(response);
+                return false;
+            });
+
+            $('#clearCacheBtn').on('click', function () {
+                clearAllCookie();
+            })
+        });
+    </script>
+
+    <style>
+        body html,
+        #app {
+            height: 100%;
+        }
+    </style>
+
+</body>
+</html>

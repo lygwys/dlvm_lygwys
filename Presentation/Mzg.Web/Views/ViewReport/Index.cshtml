@@ -1,0 +1,60 @@
+﻿@model Mzg.Web.Customize.Models.XtraReportModel
+@using Mzg.Web.Reports;
+@using DevExpress.AspNetCore;
+
+<!-- XtraReport ================================================= start -->
+<link rel="stylesheet" href="/css/thirdparty.bundle.css" />
+<link rel="stylesheet" href="/css/site.css" />
+<script src="/js/thirdparty.bundle.js"></script>
+<script src="/js/site.js" asp-append-version="true"></script>
+<!-- XtraReport ================================================= end -->
+
+<link rel="stylesheet" href="/css/viewer.part.bundle.css" />
+
+<script src="/js/viewer.part.bundle.js"></script>
+
+<script type="text/javascript" id="script">
+
+
+    function onDocumentReady(s, e) {
+
+        var parametersModel = s.GetParametersModel();
+        // Get the first parameter and specify a function to execute when its value changes.
+
+        parametersModel['parameter1'](@Model.p1);
+        parametersModel['parameter1'](@Model.p2);
+        parametersModel['parameter1'](@Model.p3);
+        parametersModel['parameter1'](@Model.p4);
+        parametersModel['parameter1'](@Model.p5);
+        parametersModel['parameter1'](@Model.p6);
+        parametersModel['parameter1'](@Model.p7);
+        parametersModel['parameter1'](@Model.p8);
+        parametersModel['parameter1'](@Model.p9);
+        parametersModel['parameter1'](@Model.p10);
+        parametersModel.submit();
+
+    }
+    function onCustomizeElements(s, e) {
+        var panelPart = e.GetById(DevExpress.Reporting.Viewer.PreviewElements.RightPanel);
+
+        //var index = e.Elements.indexOf(panelPart);
+        //e.Elements.splice(index, 1);
+        panelPart.Visible = false;
+    }
+    function CustomizeExportOptions(s, e) {
+        e.HideExportOptionsPanel();
+
+        var model = e.GetExportOptionsModel(DevExpress.Reporting.Viewer.ExportFormatID.XLSX);
+        // Encrypt the file. Encryption is performed in asynchronous mode.
+        //model.encryptionOptions.password("1234");
+       // model.documentOptions.author("Me");
+    }
+</script>
+
+@(Html.DevExpress().WebDocumentViewer("docViewer")
+    .Height("1000px")
+    .ClientSideEvents(configure =>
+    {
+        configure.BeforeRender("onDocumentReady"); configure.CustomizeElements("onCustomizeElements"); configure.CustomizeExportOptions("CustomizeExportOptions");
+    })
+    .Bind(""+@Model.reportName+""))

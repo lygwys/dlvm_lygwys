@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Logging\Mzg.Logging.AppLog\Mzg.Logging.AppLog.csproj" />
+    <ProjectReference Include="..\..\Libraries\Organization\Mzg.Organization\Mzg.Organization.csproj" />
+    <ProjectReference Include="..\..\Libraries\Personalization\Mzg.UserPersonalization\Mzg.UserPersonalization.csproj" />
+    <ProjectReference Include="..\..\Libraries\Mzg.Context\Mzg.Context.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mzg.Configuration">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Configuration.Domain">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Configuration.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Core">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Infrastructure">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Localization.Abstractions">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Security.Domain">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Security.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Security.Principal">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.SiteMap">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.SiteMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.SiteMap.Domain">
+      <HintPath>..\Mzg.Web\bin\Release\netcoreapp3.1\Mzg.SiteMap.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+ 
+</Project>

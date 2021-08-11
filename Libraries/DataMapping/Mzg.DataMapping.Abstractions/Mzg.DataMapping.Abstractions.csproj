@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependency\Mzg.Dependency.Abstractions\Mzg.Dependency.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Module\Mzg.Module.Abstractions\Mzg.Module.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

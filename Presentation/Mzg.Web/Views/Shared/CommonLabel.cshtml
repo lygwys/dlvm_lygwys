@@ -1,0 +1,12 @@
+﻿@{
+    Layout = null;
+}
+@*全局语言配置@inject Dlv.Core.IAppContext app调用语言加载语言,在此调用了localizedtextdbprovider中的Labels加载语言包。
+    在js中可以直接调用语言库中设置的变量值，把当前语言也同时设置到页面中*@
+<script>
+    @foreach (var item in app.T.Labels)
+    {
+        var str = "var LOC_" + item.Name.Trim().ToUpper() + " = '" + item.Text.Replace("'","\\'").Replace("\n","") + "'; var locallanguage='"+item.Language+"".ToUpper() + "';";
+        @Html.Raw(str);//将带有Html标签的字符串，转换成Html标签输出
+    }
+</script>

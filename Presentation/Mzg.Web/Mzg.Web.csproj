@@ -1,0 +1,321 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <UserSecretsId>e5af4d02-6899-4e8f-b1c4-3546accd5b6a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Customize\Api\**" />
+    <Compile Remove="entityplugins\**" />
+    <Compile Remove="excel\**" />
+    <Compile Remove="lang\**" />
+    <Compile Remove="Logs\**" />
+    <Compile Remove="publish\**" />
+    <Compile Remove="solution\**" />
+    <Compile Remove="upload\**" />
+    <Content Remove="Areas\Customize\Api\**" />
+    <Content Remove="entityplugins\**" />
+    <Content Remove="excel\**" />
+    <Content Remove="lang\**" />
+    <Content Remove="Logs\**" />
+    <Content Remove="publish\**" />
+    <Content Remove="solution\**" />
+    <Content Remove="upload\**" />
+    <EmbeddedResource Remove="Areas\Customize\Api\**" />
+    <EmbeddedResource Remove="entityplugins\**" />
+    <EmbeddedResource Remove="excel\**" />
+    <EmbeddedResource Remove="lang\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <EmbeddedResource Remove="publish\**" />
+    <EmbeddedResource Remove="solution\**" />
+    <EmbeddedResource Remove="upload\**" />
+    <None Remove="Areas\Customize\Api\**" />
+    <None Remove="entityplugins\**" />
+    <None Remove="excel\**" />
+    <None Remove="lang\**" />
+    <None Remove="Logs\**" />
+    <None Remove="publish\**" />
+    <None Remove="solution\**" />
+    <None Remove="upload\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\FieldSecurityController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Customize\Views\EntityPlugin\WizardEntityPlugin.cshtml" />
+    <Content Remove="Views\Security\CreateFieldSecurityProfile.cshtml" />
+    <Content Remove="Views\Security\EditFieldSecurityProfile.cshtml" />
+    <Content Remove="Views\Security\EditRolePrivileges.cshtml" />
+    <Content Remove="Views\Security\FieldSecurityProfiles.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Reports\XtraReport1.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\XtraReport1.repx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\content\js\bootstrap-application-wizard\bootstrap-wizard.js" />
+    <None Include="wwwroot\content\js\bootstrap-application-wizard\bootstrap-wizard.min.js" />
+    <None Include="wwwroot\css\icons\dxicons.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="DevExpress.AspNetCore.Common" Version="20.1.3" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="20.1.3" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="20.1.3" />
+    <PackageReference Include="Grpc.Core" Version="2.36.4" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Core" Version="3.3.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.11.2" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8.Native.win-x86" Version="3.11.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
+    <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.1.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.10.0-1.final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="3.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+
+    <ProjectReference Include="..\..\Libraries\Business\Mzg.Business.DataAnalyse\Mzg.Business.DataAnalyse.csproj" />
+
+    <ProjectReference Include="..\..\Libraries\Business\Mzg.Business.FormState\Mzg.Business.FormStateRule.csproj" />
+    <ProjectReference Include="..\..\Libraries\DataMapping\Mzg.DataMapping\Mzg.DataMapping.csproj" />
+    <ProjectReference Include="..\..\Libraries\Dependency\Mzg.Dependency.Abstractions\Mzg.Dependency.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Libraries\Dependency\Mzg.Dependency\Mzg.Dependency.csproj" />
+    <ProjectReference Include="..\..\Libraries\Event\Mzg.Event\Mzg.Event.csproj" />
+    <ProjectReference Include="..\..\Libraries\File\Mzg.File.Extensions\Mzg.File.Extensions.csproj" />
+    <ProjectReference Include="..\..\Libraries\File\Mzg.File\Mzg.File.csproj" />
+    <ProjectReference Include="..\..\Libraries\Logging\Mzg.Logging.AppLog\Mzg.Logging.AppLog.csproj" />
+    <ProjectReference Include="..\..\Libraries\Logging\Mzg.Logging.DataLog\Mzg.Logging.DataLog.csproj" />
+    <ProjectReference Include="..\..\Libraries\Module\Mzg.Module.Core\Mzg.Module.Core.csproj" />
+    <ProjectReference Include="..\..\Libraries\Module\Mzg.Module\Mzg.Module.csproj" />
+    <ProjectReference Include="..\..\Libraries\MultistageDic\Mzg.MultisDc\Mzg.MultisDc.csproj" />
+    <ProjectReference Include="..\..\Libraries\Organization\Mzg.Organization\Mzg.Organization.csproj" />
+    <ProjectReference Include="..\..\Libraries\Personalization\Mzg.UserPersonalization\Mzg.UserPersonalization.csproj" />
+    <ProjectReference Include="..\..\Libraries\Plugin\Mzg.Plugin\Mzg.Plugin.csproj" />
+    <ProjectReference Include="..\..\Libraries\RibbonButton\Mzg.RibbonButton\Mzg.RibbonButton.csproj" />
+    <ProjectReference Include="..\..\Libraries\ServerHostManage\Mzg.ServerHostManage\Mzg.ServerHostManage.csproj" />
+    <ProjectReference Include="..\..\Libraries\Mzg.Caching\Mzg.Caching.csproj" />
+    <ProjectReference Include="..\..\Libraries\Mzg.Context\Mzg.Context.csproj" />
+    <ProjectReference Include="..\..\Libraries\Mzg.Identity\Mzg.Identity.csproj" />
+    <ProjectReference Include="..\Mzg.Web.FrameWork\Mzg.Web.Framework.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="Mzg.Authrization.Abstractions">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Authrization.Abstractions.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Mzg.Business.DuplicateValidator">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Business.DuplicateValidator.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Mzg.Business.Filter">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Business.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Business.SerialNumber">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Business.SerialNumber.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Business.XtraReportManager">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Business.XtraReportManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Mzg.Configuration">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Configuration.dll</HintPath>
+    </Reference>
+  <Reference Include="Mzg.Configuration">
+      <HintPath>bin\Release\netcoreapp3.1\Mzg.Configuration.Domain.dll</HintPath>
+    </Reference>
+  <Reference Include="Mzg.Core">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Core.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Data.Export">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Data.Export.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Data.Import">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Data.Import.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.EventConsumers.Entity">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.EventConsumers.Entity.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.EventConsumers.Form">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.EventConsumers.Form.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.EventConsumers.Notify">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.EventConsumers.Notify.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.EventConsumers.QueryView">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.EventConsumers.QueryView.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.EventConsumers.RibbonButton">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.EventConsumers.RibbonButton.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Flow">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Flow.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Flow.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Flow.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Flow.Core">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Flow.Core.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Flow.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Flow.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Form">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Form.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Form.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Form.Abstractions.dll</HintPath>
+    <Private>true</Private>
+  </Reference>
+  <Reference Include="Mzg.Form.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Form.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Infrastructure">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Infrastructure.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Localization">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Localization.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Localization.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Localization.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Localization.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Localization.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Logging.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Logging.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Notify.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Notify.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Notify.Email">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Notify.Email.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Notify.Internal">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Notify.Internal.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.QueryView">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.QueryView.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.QueryView.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.QueryView.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.QueryView.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.QueryView.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Schema">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Schema.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Schema.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Schema.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Schema.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Schema.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Schema.Extensions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Schema.Extensions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Sdk">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Sdk.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Sdk.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Sdk.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Sdk.Event">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Sdk.Event.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Sdk.Extensions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Sdk.Extensions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.DataAuthorization">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.DataAuthorization.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Principal">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Principal.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Resource">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Resource.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Role">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Role.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Security.Verify">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Security.Verify.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Session">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Session.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.SiteMap">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.SiteMap.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.SiteMap.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.SiteMap.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Solution">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Solution.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Solution.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Solution.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.Solution.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.Solution.Domain.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.WebResource">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.WebResource.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.WebResource.Abstractions">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.WebResource.Abstractions.dll</HintPath>
+  </Reference>
+  <Reference Include="Mzg.WebResource.Domain">
+    <HintPath>bin\Release\netcoreapp3.1\Mzg.WebResource.Domain.dll</HintPath>
+  </Reference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Reports\XtraReport1.cs">
+      <DependentUpon>XtraReport1.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.repx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" wwwroot_4content_4css_4bootstrap3_13_15_4bootstrap_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>
